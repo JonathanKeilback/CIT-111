@@ -87,7 +87,9 @@ public class PressYourLuck {
         } else if (p3Cash > p1Cash && p3Cash > p2Cash) {
             System.out.println(player3 + " has won the game with $" + p3Cash + "!");
         } else if (p1Cash == 0 && p2Cash == 0 && p3Cash == 0) {
-            System.out.println("NOBODY WINS! ALL PLAYERS HAVE $0!");
+            System.out.println("EVERYBODY LOSES! WOWZERS!");
+        } else {
+            System.out.println("The game has ended in a tie.");
         }
 
     } //close main method
