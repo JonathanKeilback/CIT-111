@@ -25,6 +25,7 @@ public class PressYourLuck {
 
     /**
      * Main Method: Begins and ends the game, and switches between players.
+     *
      * @param args
      * @throws InterruptedException
      */
@@ -93,10 +94,12 @@ public class PressYourLuck {
 
     /**
      * This method processes Player 1's turn to play the game.
+     *
      * @param player1 Name string
      * @param player2 Name string
      * @param player3 Name string
-     * @return Returns to main the player to switch to, and whether to end the game or not.
+     * @return Returns to main the player to switch to, and whether to end the
+     * game or not.
      * @throws InterruptedException
      */
     public static int player1Turn(String player1, String player2, String player3) throws InterruptedException {
@@ -162,7 +165,9 @@ public class PressYourLuck {
                 }
             }
         }
-        if (p1Spins > 0) {
+        if (p1Cash > 0 && p1Cash > p2Cash && p1Cash > p3Cash && p2Spins == 0 && p3Spins == 0) {
+            switchToPlayer = 0;
+        } else if (p1Spins > 0) {
             boolean player2Pass = false;
             boolean player3Pass = false;
             boolean choiceValidation = false;
@@ -215,6 +220,7 @@ public class PressYourLuck {
                 }
             } while (choiceValidation == false);
         }
+
         if (switchToPlayer == 4) { //debug block
             System.out.println();
             System.out.println("OH NO!!! SWITCHING ERROR IN PLAYER 1 METHOD!");
@@ -226,10 +232,12 @@ public class PressYourLuck {
 
     /**
      * This method processes Player 2's turn to play the game.
+     *
      * @param player1 Name string
      * @param player2 Name string
      * @param player3 Name string
-     * @return Returns to main the player to switch to, and whether to end the game or not.
+     * @return Returns to main the player to switch to, and whether to end the
+     * game or not.
      * @throws InterruptedException
      */
     public static int player2Turn(String player1, String player2, String player3) throws InterruptedException {
@@ -295,7 +303,9 @@ public class PressYourLuck {
                 }
             }
         }
-        if (p2Spins > 0) {
+        if (p2Cash > 0 && p2Cash > p1Cash && p2Cash > p3Cash && p1Spins == 0 && p3Spins == 0) {
+            switchToPlayer = 0;
+        } else if (p2Spins > 0) {
             boolean player1Pass = false;
             boolean player3Pass = false;
             boolean choiceValidation = false;
@@ -359,10 +369,12 @@ public class PressYourLuck {
 
     /**
      * This method processes Player 3's turn to play the game.
+     *
      * @param player1 Name string
      * @param player2 Name string
      * @param player3 Name string
-     * @return Returns to main the player to switch to, and whether to end the game or not.
+     * @return Returns to main the player to switch to, and whether to end the
+     * game or not.
      * @throws InterruptedException
      */
     public static int player3Turn(String player1, String player2, String player3) throws InterruptedException {
@@ -428,7 +440,9 @@ public class PressYourLuck {
                 }
             }
         }
-        if (p3Spins > 0) {
+        if (p3Cash > 0 && p3Cash > p2Cash && p3Cash > p1Cash && p2Spins == 0 && p1Spins == 0) {
+            switchToPlayer = 0;
+        } else if (p3Spins > 0) {
             boolean player2Pass = false;
             boolean player1Pass = false;
             boolean choiceValidation = false;
@@ -492,6 +506,7 @@ public class PressYourLuck {
 
     /**
      * This method displays the game's current scores to the user.
+     *
      * @param player1 Name string
      * @param player2 Name string
      * @param player3 Name string
@@ -527,8 +542,11 @@ public class PressYourLuck {
     } //close displayScores
 
     /**
-     * This method simulates a spin on the Big Board, and adds/deducts the appropriate scores.
-     * @param player This is a control variable to choose which player's scores to change.
+     * This method simulates a spin on the Big Board, and adds/deducts the
+     * appropriate scores.
+     *
+     * @param player This is a control variable to choose which player's scores
+     * to change.
      * @throws InterruptedException
      */
     public static void spin(int player) throws InterruptedException {
