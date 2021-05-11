@@ -1,4 +1,4 @@
-package JonathanObjectProject;
+package jonathanObjectProject;
 
 import java.util.Scanner;
 
