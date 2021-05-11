@@ -1,5 +1,5 @@
 
-package JonathanObjectProject;
+package jonathanObjectProject;
 
 /**
  * Object class for Mixer.java. Contains fader/volume levels for each mixer channel.
